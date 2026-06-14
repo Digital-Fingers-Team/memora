@@ -1,0 +1,22 @@
+{
+  "name": "knowledge_vector_index",
+  "type": "vectorSearch",
+  "definition": {
+    "fields": [
+      {
+        "type": "vector",
+        "path": "vector",
+        "numDimensions": 1536,
+        "similarity": "cosine"
+      },
+      {
+        "type": "filter",
+        "path": "ownerId"
+      },
+      {
+        "type": "filter",
+        "path": "refType"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "knowledge-harvest",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Knowledge Harvest production MVP monorepo",
+  "packageManager": "pnpm@11.4.0",
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:api\" \"pnpm dev:web\"",
+    "dev:api": "pnpm --filter @knowledge-harvest/api dev",
+    "dev:web": "pnpm --filter @knowledge-harvest/web dev",
+    "dev:worker": "pnpm --filter @knowledge-harvest/api worker",
+    "build": "pnpm --filter @knowledge-harvest/shared build && pnpm --filter @knowledge-harvest/api build && pnpm --filter @knowledge-harvest/web build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r --if-present test",
+    "lint": "pnpm -r --if-present lint"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

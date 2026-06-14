@@ -1,0 +1,40 @@
+{
+  "name": "@knowledge-harvest/api",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "worker": "tsx watch src/worker.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "start:worker": "node dist/worker.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@knowledge-harvest/shared": "workspace:*",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.1",
+    "google-auth-library": "^10.2.1",
+    "helmet": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.1",
+    "nanoid": "^5.1.5",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.23",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.2.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,15 +1,15 @@
 {
-  "name": "knowledge-harvest",
+  "name": "memora",
   "version": "0.1.0",
   "private": true,
-  "description": "Knowledge Harvest production MVP monorepo",
+  "description": "Memora production MVP monorepo",
   "packageManager": "pnpm@11.4.0",
   "scripts": {
     "dev": "concurrently \"pnpm dev:api\" \"pnpm dev:web\"",
-    "dev:api": "pnpm --filter @knowledge-harvest/api dev",
-    "dev:web": "pnpm --filter @knowledge-harvest/web dev",
-    "dev:worker": "pnpm --filter @knowledge-harvest/api worker",
-    "build": "pnpm --filter @knowledge-harvest/shared build && pnpm --filter @knowledge-harvest/api build && pnpm --filter @knowledge-harvest/web build",
+    "dev:api": "pnpm --filter @memora/api dev",
+    "dev:web": "pnpm --filter @memora/web dev",
+    "dev:worker": "pnpm --filter @memora/api worker",
+    "build": "pnpm --filter @memora/shared build && pnpm --filter @memora/api build && pnpm --filter @memora/web build",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r --if-present test",
     "lint": "pnpm -r --if-present lint"

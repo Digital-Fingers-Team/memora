@@ -51,14 +51,14 @@ export default function Home() {
   const api = useMemo(() => new ApiClient(() => session?.accessToken), [session]);
 
   useEffect(() => {
-    const raw = localStorage.getItem("knowledge-harvest-session");
+    const raw = localStorage.getItem("memora-session");
     if (raw) setSession(JSON.parse(raw));
   }, []);
 
   const persistSession = (next: Session | null) => {
     setSession(next);
-    if (next) localStorage.setItem("knowledge-harvest-session", JSON.stringify(next));
-    else localStorage.removeItem("knowledge-harvest-session");
+    if (next) localStorage.setItem("memora-session", JSON.stringify(next));
+    else localStorage.removeItem("memora-session");
   };
 
   const refresh = useCallback(async () => {
@@ -101,7 +101,7 @@ export default function Home() {
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
-                <h1 className="text-base font-semibold">Knowledge Harvest</h1>
+                <h1 className="text-base font-semibold">Memora</h1>
                 <p className="text-xs text-muted-foreground">Thinking OS</p>
               </div>
             </div>
@@ -213,7 +213,7 @@ function AuthScreen({ onSession }: { onSession: (session: Session) => void }) {
           <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-md bg-primary text-primary-foreground">
             <Sparkles className="h-6 w-6" />
           </div>
-          <h1 className="max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">Knowledge Harvest</h1>
+          <h1 className="max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">Memora</h1>
           <p className="mt-4 max-w-xl text-base text-muted-foreground">
             Capture thinking once, then reuse it across decisions, ideas, reports, and future questions.
           </p>

@@ -1,4 +1,4 @@
-import type { HarvestResult } from "@knowledge-harvest/shared";
+import type { HarvestResult } from "@memora/shared";
 
 export function heuristicHarvest(rawContent: string, fallbackTitle: string): HarvestResult {
   const sentences = rawContent

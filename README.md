@@ -1,6 +1,6 @@
-# Knowledge Harvest
+# Memora
 
-Knowledge Harvest is an AI-powered Thinking OS for capturing, structuring, connecting, and reusing personal knowledge.
+Memora is an AI-powered Thinking OS for capturing, structuring, connecting, and reusing personal knowledge.
 
 It is designed for knowledge compounding, not passive storage. Every captured note, transcript, URL, decision, lesson, project update, or idea becomes a structured Knowledge Object that can be searched, linked, surfaced, and reused by the assistant when the user thinks through future work.
 
@@ -33,24 +33,23 @@ It is designed for knowledge compounding, not passive storage. Every captured no
 
 ```text
 .
-├─ apps/
-│  ├─ api/                 Express API and background worker
-│  └─ web/                 Next.js dashboard
-├─ packages/
-│  └─ shared/              Shared TypeScript types and Zod schemas
-├─ docs/
-│  ├─ api.md               API reference
-│  └─ deployment.md        Production deployment guide
-├─ infra/
-│  ├─ nginx.conf           Reverse proxy config
-│  └─ mongodb-vector-index.json
-├─ docker-compose.yml
-├─ pnpm-workspace.yaml
-└─ .env.example
+|-- apps/
+|   |-- api/                 Express API and background worker
+|   `-- web/                 Next.js dashboard
+|-- packages/
+|   `-- shared/              Shared TypeScript types and Zod schemas
+|-- docs/
+|   |-- api.md               API reference
+|   `-- deployment.md        Production deployment guide
+|-- infra/
+|   |-- nginx.conf           Reverse proxy config
+|   `-- mongodb-vector-index.json
+|-- docker-compose.yml
+|-- pnpm-workspace.yaml
+`-- .env.example
 ```
 
 ## Prerequisites
-
 - Node.js 20.11 or newer
 - pnpm 11.x
 - MongoDB Atlas cluster or local MongoDB-compatible instance
@@ -143,9 +142,9 @@ Without `OPENROUTER_API_KEY`, the backend falls back to deterministic local harv
 Workspace-specific examples:
 
 ```bash
-pnpm --filter @knowledge-harvest/web build
-pnpm --filter @knowledge-harvest/api dev
-pnpm --filter @knowledge-harvest/shared typecheck
+pnpm --filter @memora/web build
+pnpm --filter @memora/api dev
+pnpm --filter @memora/shared typecheck
 ```
 
 ## Core Data Model

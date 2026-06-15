@@ -6,7 +6,7 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(4000),
   APP_URL: z.string().url().default("http://localhost:3000"),
   API_URL: z.string().url().default("http://localhost:4000"),
-  MONGODB_URI: z.string().min(1).default("mongodb://localhost:27017/knowledge_harvest"),
+  MONGODB_URI: z.string().min(1).default("mongodb://localhost:27017/memora"),
   JWT_ACCESS_SECRET: z.string().min(16).default("dev-access-secret-change-me"),
   JWT_REFRESH_SECRET: z.string().min(16).default("dev-refresh-secret-change-me"),
   JWT_ACCESS_TTL: z.string().default("15m"),

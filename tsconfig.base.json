@@ -12,8 +12,8 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@knowledge-harvest/shared": ["packages/shared/src/index.ts"],
-      "@knowledge-harvest/shared/*": ["packages/shared/src/*"]
+      "@memora/shared": ["packages/shared/src/index.ts"],
+      "@memora/shared/*": ["packages/shared/src/*"]
     }
   }
 }

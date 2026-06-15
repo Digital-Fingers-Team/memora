@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import { resolve } from "node:path";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@knowledge-harvest/shared"],
+  transpilePackages: ["@memora/shared"],
   outputFileTracingRoot: resolve(__dirname, "../.."),
   experimental: {
     serverActions: {

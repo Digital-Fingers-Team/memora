@@ -1,5 +1,5 @@
 import mongoose, { Schema, Types } from "mongoose";
-import type { JobStatus, JobType, KnowledgeSourceType, KnowledgeStatus, RelationshipType, ReportType, UserRole } from "@knowledge-harvest/shared";
+import type { JobStatus, JobType, KnowledgeSourceType, KnowledgeStatus, RelationshipType, ReportType, UserRole } from "@memora/shared";
 
 const timestamps = { timestamps: true };
 

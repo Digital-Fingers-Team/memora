@@ -1,4 +1,4 @@
-# Knowledge Harvest API
+# Memora API
 
 Base path: `/api/v1`
 

@@ -1,5 +1,5 @@
 {
-  "name": "@knowledge-harvest/api",
+  "name": "@memora/api",
   "version": "0.1.0",
   "private": true,
   "main": "dist/server.js",
@@ -13,7 +13,7 @@
     "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
-    "@knowledge-harvest/shared": "workspace:*",
+    "@memora/shared": "workspace:*",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",

@@ -10,7 +10,7 @@ import {
   relationshipTypeSchema,
   semanticSearchInputSchema,
   settingsInputSchema
-} from "@knowledge-harvest/shared";
+} from "@memora/shared";
 import { env } from "./config";
 import { AppError } from "./errors";
 import { ensureFirstAdmin, hashPassword, requireAdmin, requireAuth, signTokens, verifyPassword } from "./auth";
@@ -44,7 +44,7 @@ function ownerId(req: express.Request) {
 }
 
 api.get("/health", (_req, res) => {
-  res.json({ data: { ok: true, service: "knowledge-harvest-api", time: new Date().toISOString() } });
+  res.json({ data: { ok: true, service: "memora-api", time: new Date().toISOString() } });
 });
 
 api.get("/docs", (_req, res) => {

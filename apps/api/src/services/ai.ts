@@ -1,4 +1,4 @@
-import { harvestResultSchema, type HarvestResult } from "@knowledge-harvest/shared";
+import { harvestResultSchema, type HarvestResult } from "@memora/shared";
 import { completeWithOpenRouter } from "./openrouter";
 import { heuristicHarvest } from "./heuristics";
 
@@ -14,7 +14,7 @@ export async function harvestKnowledge(ownerId: string, rawContent: string, fall
         },
         {
           role: "user",
-          content: `Harvest this content into a Knowledge Harvest object:\n\n${rawContent.slice(0, 50000)}`
+          content: `Harvest this content into a Memora object:\n\n${rawContent.slice(0, 50000)}`
         }
       ],
       true
@@ -31,7 +31,7 @@ export async function generateAssistantAnswer(ownerId: string, question: string,
       {
         role: "system",
         content:
-          "You are Knowledge Harvest's thinking assistant. Answer from the user's personal knowledge first. Cite object titles naturally. If personal context is thin, say so and then reason generally."
+          "You are Memora's thinking assistant. Answer from the user's personal knowledge first. Cite object titles naturally. If personal context is thin, say so and then reason generally."
       },
       {
         role: "user",

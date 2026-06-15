@@ -7,7 +7,7 @@ const intervalMs = 3000;
 
 async function main() {
   await connectDatabase();
-  console.log(`Knowledge Harvest worker ${workerId} started`);
+  console.log(`Memora worker ${workerId} started`);
 
   setInterval(async () => {
     try {

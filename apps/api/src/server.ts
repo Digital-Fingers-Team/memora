@@ -6,7 +6,7 @@ async function main() {
   await connectDatabase();
   const app = createApp();
   app.listen(env.PORT, () => {
-    console.log(`Knowledge Harvest API listening on ${env.PORT}`);
+    console.log(`Memora API listening on ${env.PORT}`);
   });
 }
 

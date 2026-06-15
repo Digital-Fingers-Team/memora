@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import type { JobType } from "@knowledge-harvest/shared";
+import type { JobType } from "@memora/shared";
 import { Decision, Job, KnowledgeObject } from "../models";
 import { harvestKnowledge, generateDecisionReview } from "./ai";
 import { embedKnowledgeObject } from "./embedding";

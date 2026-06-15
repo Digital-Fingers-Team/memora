@@ -14,7 +14,7 @@ importers:
 
   apps/api:
     dependencies:
-      '@knowledge-harvest/shared':
+      '@memora/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       bcryptjs:
@@ -81,7 +81,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@knowledge-harvest/shared':
+      '@memora/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       class-variance-authority:

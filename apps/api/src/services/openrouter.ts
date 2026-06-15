@@ -17,7 +17,7 @@ export async function completeWithOpenRouter(ownerId: string | undefined, messag
       Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
       "Content-Type": "application/json",
       "HTTP-Referer": env.APP_URL,
-      "X-Title": "Knowledge Harvest"
+      "X-Title": "Memora"
     },
     body: JSON.stringify({
       model: settings.model,
@@ -50,7 +50,7 @@ export async function embedWithOpenRouter(input: string, ownerId?: string) {
       Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
       "Content-Type": "application/json",
       "HTTP-Referer": env.APP_URL,
-      "X-Title": "Knowledge Harvest"
+      "X-Title": "Memora"
     },
     body: JSON.stringify({
       model: settings.embeddingModel,

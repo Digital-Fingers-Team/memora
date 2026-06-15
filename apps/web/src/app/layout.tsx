@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Knowledge Harvest",
+  title: "Memora",
   description: "AI-powered Thinking OS for compounding personal knowledge."
 };
 

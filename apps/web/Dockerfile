@@ -12,8 +12,8 @@ WORKDIR /app
 ARG NEXT_PUBLIC_API_URL=/api/v1
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 COPY . .
-RUN pnpm --filter @knowledge-harvest/shared build
-RUN pnpm --filter @knowledge-harvest/web build
+RUN pnpm --filter @memora/shared build
+RUN pnpm --filter @memora/web build
 
 FROM node:22-alpine AS runner
 WORKDIR /app

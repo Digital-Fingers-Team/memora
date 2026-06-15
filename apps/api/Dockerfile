@@ -10,8 +10,8 @@ RUN pnpm install --frozen-lockfile
 FROM deps AS build
 WORKDIR /app
 COPY . .
-RUN pnpm --filter @knowledge-harvest/shared build
-RUN pnpm --filter @knowledge-harvest/api build
+RUN pnpm --filter @memora/shared build
+RUN pnpm --filter @memora/api build
 
 FROM node:22-alpine AS runner
 WORKDIR /app

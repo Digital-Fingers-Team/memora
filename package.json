@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "description": "Memora production MVP monorepo",
-  "packageManager": "pnpm@11.4.0",
+  "packageManager": "pnpm@10.34.3",
   "scripts": {
     "dev": "concurrently \"pnpm dev:api\" \"pnpm dev:web\"",
     "dev:api": "pnpm --filter @memora/api dev",
     "dev:web": "pnpm --filter @memora/web dev",
     "dev:worker": "pnpm --filter @memora/api worker",
     "build": "pnpm --filter @memora/shared build && pnpm --filter @memora/api build && pnpm --filter @memora/web build",
+    "start": "concurrently \"pnpm start:api\" \"pnpm start:web\"",
+    "start:api": "pnpm --filter @memora/api start",
+    "start:web": "pnpm --filter @memora/web start",
+    "start:worker": "pnpm --filter @memora/api start:worker",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r --if-present test",
     "lint": "pnpm -r --if-present lint"

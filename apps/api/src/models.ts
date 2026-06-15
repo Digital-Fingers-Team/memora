@@ -44,7 +44,7 @@ export interface SettingsDoc {
 const settingsSchema = new Schema<SettingsDoc>(
   {
     ownerId: { type: Schema.Types.ObjectId, ref: "User", index: true },
-    scope: { type: String, enum: ["user", "admin"], required: true, index: true },
+    scope: { type: String, enum: ["user", "admin"], required: true },
     model: { type: String, required: true },
     temperature: { type: Number, default: 0.2 },
     maxTokens: { type: Number, default: 4000 },

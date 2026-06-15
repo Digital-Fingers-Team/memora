@@ -51,7 +51,7 @@ It is designed for knowledge compounding, not passive storage. Every captured no
 
 ## Prerequisites
 - Node.js 20.11 or newer
-- pnpm 11.x
+- pnpm 10.x
 - MongoDB Atlas cluster or local MongoDB-compatible instance
 - OpenRouter API key for production AI workflows
 - Google OAuth client ID if Google login is enabled
@@ -107,6 +107,19 @@ If port `3000` is already busy:
 pnpm --dir apps/web exec next dev -p 3001
 ```
 
+For built production mode on Windows PowerShell:
+
+```powershell
+$env:WEB_PORT=3001
+pnpm start
+```
+
+For built production mode on macOS/Linux:
+
+```bash
+WEB_PORT=3001 pnpm start
+```
+
 ## Environment Variables
 
 | Variable | Purpose |
@@ -114,6 +127,7 @@ pnpm --dir apps/web exec next dev -p 3001
 | `APP_URL` | Public web app URL |
 | `API_URL` | Public API URL |
 | `PORT` | API server port |
+| `WEB_PORT` | Web app port for `pnpm start:web` and `pnpm start` |
 | `MONGODB_URI` | MongoDB connection string |
 | `JWT_ACCESS_SECRET` | Access token signing secret |
 | `JWT_REFRESH_SECRET` | Refresh token signing secret |
@@ -134,6 +148,10 @@ Without `OPENROUTER_API_KEY`, the backend falls back to deterministic local harv
 | `pnpm dev:web` | Start the Next.js app |
 | `pnpm dev:api` | Start the Express API |
 | `pnpm dev:worker` | Start the background worker |
+| `pnpm start` | Start built API and web app |
+| `pnpm start:api` | Start built API only |
+| `pnpm start:web` | Start built web app only |
+| `pnpm start:worker` | Start built worker only |
 | `pnpm typecheck` | Typecheck all workspaces |
 | `pnpm test` | Run tests |
 | `pnpm build` | Build shared package, API, and web app |
@@ -145,6 +163,45 @@ Workspace-specific examples:
 pnpm --filter @memora/web build
 pnpm --filter @memora/api dev
 pnpm --filter @memora/shared typecheck
+```
+
+## After `pnpm build`
+
+`pnpm build` only compiles the app. After it finishes, choose how you want to run Memora:
+
+For local production mode:
+
+```bash
+pnpm start
+pnpm start:worker
+```
+
+This starts:
+
+- API on `http://localhost:4000`
+- Web app on `http://localhost:3000` by default, or `WEB_PORT` when configured
+- Worker as a separate long-running process
+
+If port `3000` is already in use, set `WEB_PORT` before starting:
+
+```powershell
+$env:WEB_PORT=3001
+pnpm start
+```
+
+For development, use the dev commands instead:
+
+```bash
+pnpm dev:web
+pnpm dev:api
+pnpm dev:worker
+```
+
+For deployment, prefer Docker Compose:
+
+```bash
+docker compose build
+docker compose up -d
 ```
 
 ## Core Data Model
@@ -230,7 +287,7 @@ See:
 
 ### pnpm blocks native build scripts
 
-pnpm 11 requires approval for packages with lifecycle scripts. This repo allows the expected native packages in `pnpm-workspace.yaml`:
+pnpm requires approval for packages with lifecycle scripts. This repo allows the expected native packages in `pnpm-workspace.yaml`:
 
 - `esbuild`
 - `sharp`

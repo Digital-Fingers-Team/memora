@@ -275,9 +275,17 @@ function InboxPanel({ api, onDone, setNotice }: PanelProps) {
   async function capture() {
     setLoading(true);
     try {
+      const trimmedTitle = title.trim();
+      const trimmedContent = content.trim();
+      const trimmedSourceUrl = sourceUrl.trim();
       await api.request("/inbox/capture", {
         method: "POST",
-        body: JSON.stringify({ type, title: title || undefined, content, sourceUrl: sourceUrl || undefined })
+        body: JSON.stringify({
+          type,
+          title: trimmedTitle || undefined,
+          content: trimmedContent,
+          sourceUrl: trimmedSourceUrl || undefined
+        })
       });
       setContent("");
       setTitle("");

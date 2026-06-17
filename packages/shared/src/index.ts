@@ -51,11 +51,18 @@ export type JobStatus = z.infer<typeof jobStatusSchema>;
 export const reportTypeSchema = z.enum(["weekly", "pattern", "decision_review"]);
 export type ReportType = z.infer<typeof reportTypeSchema>;
 
+const optionalTrimmedString = (schema: z.ZodString) =>
+  z.preprocess((value) => {
+    if (typeof value !== "string") return value;
+    const trimmed = value.trim();
+    return trimmed.length ? trimmed : undefined;
+  }, schema.optional());
+
 export const captureInputSchema = z.object({
   type: knowledgeSourceTypeSchema,
-  title: z.string().trim().min(1).max(180).optional(),
+  title: optionalTrimmedString(z.string().min(1).max(180)),
   content: z.string().trim().min(1).max(200000),
-  sourceUrl: z.string().url().optional(),
+  sourceUrl: optionalTrimmedString(z.string().url()),
   metadata: z.record(z.unknown()).optional()
 });
 export type CaptureInput = z.infer<typeof captureInputSchema>;
